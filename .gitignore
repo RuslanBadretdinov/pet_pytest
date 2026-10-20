@@ -10,6 +10,7 @@ __pycache__/
 *.pyo
 
 # Allure артефакты (не коммитим результаты и отчёт)
+allure-*/
 allure-results/
 allure-report/
 
