@@ -1,5 +1,7 @@
 from httpbin_api_client import get_endpoint
+import allure
 
+@allure.title('Проверка ответа для /get')
 def test_response_structure():
     resp = get_endpoint("get")
     data = resp.json()
@@ -16,6 +18,7 @@ def test_response_structure():
     assert isinstance(data["origin"], str)
     assert isinstance(data["url"], str)
 
+@allure.title('Проверка Accept = "application/json" ответа для /get')
 def test_headers_contain_accept():
     custom_headers = {"Accept": "application/json"}
     resp = get_endpoint("get", headers=custom_headers)
